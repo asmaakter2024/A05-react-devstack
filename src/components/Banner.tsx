@@ -4,9 +4,15 @@ const Banner = () => {
   return (
     <div className="mt-24  mb-28">
       <div className=" container mx-auto flex justify-between items-center">
-        <div>
-          <h1 className="text-6xl leading-15 tracking-[-1.5px] w-[555px]">
-            Build Your Ideal Development Stack
+        <div className=" w-[555px]">
+          <h1>
+            <span className="text-6xl font-bold text-[#0F172A]">
+              Build Your Ideal
+            </span>
+            <br />
+            <span className="text-6xl font-bold bg-[linear-gradient(90deg,_#FF5722_0%,_#D81B7E_50%,_#7C3AED_100%)] bg-clip-text text-transparent">
+              Development Stack
+            </span>
           </h1>
           <p className="pt-6 pb-13 text-[18px] leading-[29.3px]">
             Explore frontend, backend, database, and tooling options,
