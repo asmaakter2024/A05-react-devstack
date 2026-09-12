@@ -20,7 +20,9 @@ const Banner = () => {
             fits your next project.
           </p>
           <div className="flex gap-2">
-            <button className="btn btn-active btn-warning">Warning</button>
+            <button className="btn btn-active btn-warning">
+              Explore Technologies
+            </button>
             <button className="btn btn-active">Default</button>
           </div>
         </div>
