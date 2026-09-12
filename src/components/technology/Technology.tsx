@@ -1,16 +1,39 @@
-import React, { use } from "react";
+import { use, useState } from "react";
 import type { Itechnology } from "../../types/technologyType";
 import AvailableStack from "./AvailableStack";
 
-interface technologyProps {
+interface TechnologyProps {
   technologyPromise: Promise<Itechnology[]>;
 }
 
-const Technology = ({ technologyPromise }: technologyProps) => {
-  console.log(technologyPromise);
-
+const Technology = ({ technologyPromise }: TechnologyProps) => {
   const technology = use(technologyPromise);
-  //console.log(technology, "technology");
+
+  const [selectedTechnologies, setSelectedTechnologies] = useState<
+    Itechnology[]
+  >([]);
+
+  const addToStack = (tech: Itechnology) => {
+    setSelectedTechnologies((prev) => {
+      // একই technology যেন একাধিকবার add না হয়
+      const alreadyExists = prev.some((item) => item.id === tech.id);
+
+      if (alreadyExists) {
+        return prev;
+      }
+
+      return [...prev, tech];
+    });
+  };
+
+  const removeFromStack = (id: string) => {
+    setSelectedTechnologies((prev) => prev.filter((tech) => tech.id !== id));
+  };
+
+  const removeAll = () => {
+    setSelectedTechnologies([]);
+  };
+
   return (
     <div>
       <div className="container mx-auto">
@@ -20,11 +43,18 @@ const Technology = ({ technologyPromise }: technologyProps) => {
             Technologies
           </span>
         </h2>
+
         <p className="text-xl font-light mb-6">
           Pick one technology per category to build your ideal stack.
         </p>
 
-        <AvailableStack technology={technology} />
+        <AvailableStack
+          technology={technology}
+          selectedTechnologies={selectedTechnologies}
+          addToStack={addToStack}
+          removeFromStack={removeFromStack}
+          removeAll={removeAll}
+        />
       </div>
     </div>
   );
