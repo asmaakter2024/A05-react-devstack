@@ -19,11 +19,22 @@ const AvailableStack = ({
 }: AvailableStackProps) => {
   return (
     <div className="grid grid-cols-4 gap-4">
-      {/* Technology Cards */}
+      {/* Available Technologies */}
       <div className="col-span-3 grid grid-cols-3 gap-4">
-        {technology.map((tech) => (
-          <TechCard key={tech.id} tech={tech} addToStack={addToStack} />
-        ))}
+        {technology.map((tech) => {
+          const isSelected = selectedTechnologies.some(
+            (item) => item.id === tech.id,
+          );
+
+          return (
+            <TechCard
+              key={tech.id}
+              tech={tech}
+              addToStack={addToStack}
+              isSelected={isSelected}
+            />
+          );
+        })}
       </div>
 
       {/* Your Stack */}

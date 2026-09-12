@@ -4,11 +4,17 @@ import type { Itechnology } from "../../types/technologyType";
 interface TechCardProps {
   tech: Itechnology;
   addToStack: (tech: Itechnology) => void;
+  isSelected: boolean;
 }
 
-const TechCard = ({ tech, addToStack }: TechCardProps) => {
+const TechCard = ({ tech, addToStack, isSelected }: TechCardProps) => {
   return (
-    <div className="container max-auto mb-16 rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.04)]">
+    <div
+      className={`mb-16 rounded-[28px] border bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.04)] transition-all ${
+        isSelected ? "border-2 border-green-500 shadow-lg" : "border-slate-200"
+      }`}
+    >
+      {/* Icon & Badge */}
       <div className="flex items-center justify-between">
         <img src={tech.icon} alt={tech.name} className="h-12 w-12" />
 
@@ -17,6 +23,7 @@ const TechCard = ({ tech, addToStack }: TechCardProps) => {
         </span>
       </div>
 
+      {/* Technology Info */}
       <div className="mt-5">
         <h2 className="text-[18px] font-bold text-slate-900">{tech.name}</h2>
 
@@ -25,8 +32,9 @@ const TechCard = ({ tech, addToStack }: TechCardProps) => {
         </p>
       </div>
 
-      <div className="my-7 h-px bg-slate-100"></div>
+      <div className="my-7 h-px bg-slate-100" />
 
+      {/* Meta Information */}
       <div className="flex items-center justify-between gap-4">
         <span className="rounded-lg bg-slate-100 px-4 py-2 text-lg text-slate-600">
           {tech.category}
@@ -40,11 +48,17 @@ const TechCard = ({ tech, addToStack }: TechCardProps) => {
         </div>
       </div>
 
+      {/* Add Button */}
       <button
         onClick={() => addToStack(tech)}
-        className="mt-7 w-full rounded-xl bg-slate-950 py-4 text-lg font-medium text-white transition hover:bg-slate-800"
+        disabled={isSelected}
+        className={`mt-7 w-full rounded-xl py-4 text-lg font-medium text-white transition ${
+          isSelected
+            ? "cursor-not-allowed bg-green-500"
+            : "bg-slate-950 hover:bg-slate-800"
+        }`}
       >
-        Add to Stack
+        {isSelected ? "Added to Stack ✓" : "Add to Stack"}
       </button>
     </div>
   );

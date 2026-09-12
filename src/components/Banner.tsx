@@ -20,10 +20,10 @@ const Banner = () => {
             fits your next project.
           </p>
           <div className="flex gap-2">
-            <button className="btn btn-active btn-warning">
+            <button className=" btn rounded-lg bg-gradient-to-r from-[#F97316] to-[#EC4899]">
               Explore Technologies
             </button>
-            <button className="btn btn-active">Default</button>
+            <button className="btn btn-active rounded-lg">Default</button>
           </div>
         </div>
 

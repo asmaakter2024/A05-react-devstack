@@ -15,7 +15,7 @@ const YourStack = ({
     <div className="w-full max-w-[408px] rounded-[24px] border border-slate-100 bg-white p-[30px] shadow-[0_2px_8px_rgba(15,23,42,0.06)]">
       {/* Header */}
       <div className="mb-6">
-        <h2 className="text-[24px] font-bold  leading-8 text-slate-900">
+        <h2 className="text-[24px] font-bold leading-8 text-slate-900">
           Your Stack
         </h2>
 
@@ -25,12 +25,11 @@ const YourStack = ({
         </p>
       </div>
 
-      {/* Technology List / Empty State */}
-
+      {/* Stack List / Empty State */}
       {technologies.length === 0 ? (
         <div className="flex min-h-[200px] items-center justify-center">
-          <p className="text-lg rounded-xl border p-3 border-slate-400 font-medium text-slate-400">
-            YourStack is empty
+          <p className="rounded-xl border border-slate-400 p-3 text-lg font-medium text-slate-400">
+            Your Stack is empty
           </p>
         </div>
       ) : (
@@ -40,7 +39,7 @@ const YourStack = ({
               key={tech.id}
               className="flex h-[72px] items-center justify-between rounded-xl border border-slate-200 bg-white px-4"
             >
-              {/* Left */}
+              {/* Technology Info */}
               <div className="flex items-center gap-4">
                 <img
                   src={tech.icon}
@@ -59,7 +58,7 @@ const YourStack = ({
                 </div>
               </div>
 
-              {/* Remove */}
+              {/* Remove Button */}
               <button
                 onClick={() => removeTechnology(tech.id)}
                 className="flex h-8 w-8 items-center justify-center text-slate-400 transition hover:text-red-500"
@@ -83,8 +82,7 @@ const YourStack = ({
         </div>
       )}
 
-      {/* Remove All */}
-
+      {/* Remove All Button */}
       {technologies.length > 0 && (
         <button
           onClick={removeAll}
