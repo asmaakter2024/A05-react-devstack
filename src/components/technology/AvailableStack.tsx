@@ -18,9 +18,9 @@ const AvailableStack = ({
   removeAll,
 }: AvailableStackProps) => {
   return (
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 gap-6 lg:grid-cols-4">
       {/* Available Technologies */}
-      <div className="col-span-3 grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:col-span-3 lg:grid-cols-3">
         {technology.map((tech) => {
           const isSelected = selectedTechnologies.some(
             (item) => item.id === tech.id,
@@ -38,7 +38,7 @@ const AvailableStack = ({
       </div>
 
       {/* Your Stack */}
-      <div className="col-span-1">
+      <div className="lg:col-span-1">
         <YourStack
           technologies={selectedTechnologies}
           removeTechnology={removeFromStack}

@@ -25,7 +25,7 @@ const YourStack = ({
         </p>
       </div>
 
-      {/* Stack List / Empty State */}
+      {/* Stack List  */}
       {technologies.length === 0 ? (
         <div className="flex min-h-[200px] items-center justify-center">
           <p className="rounded-xl border border-slate-400 p-3 text-lg font-medium text-slate-400">

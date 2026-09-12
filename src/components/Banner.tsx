@@ -3,8 +3,8 @@ import BannerImg from "../assets/banner-stack.png";
 const Banner = () => {
   return (
     <div className="mt-24  mb-28">
-      <div className=" container mx-auto flex justify-between items-center">
-        <div className=" w-[555px]">
+      <div className="container mx-auto flex flex-col items-center justify-between gap-8 lg:flex-row lg:gap-10">
+        <div className="w-full text-center lg:w-[555px] lg:text-left">
           <h1>
             <span className="text-6xl font-bold text-[#0F172A]">
               Build Your Ideal

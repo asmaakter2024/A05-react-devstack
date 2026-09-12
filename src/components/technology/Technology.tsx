@@ -37,7 +37,7 @@ const Technology = ({ technologyPromise }: TechnologyProps) => {
 
     setSelectedTechnologies(updatedStack);
 
-    // যদি remove করার পর stack empty হয়ে যায়
+
     if (selectedTechnologies.length === 1) {
       toast.info("Stack is removed");
     }
