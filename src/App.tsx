@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import Banner from "./components/Banner";
 import Nav from "./components/Nav";
 import Technology from "./components/technology/Technology";
@@ -12,12 +12,36 @@ const technologyFetch = async (): Promise<Itechnology[]> => {
 
 function App() {
   const technologyPromise = technologyFetch();
+
+  // const [stack, setStack] = useState<Itechnology[]>([]);
+
+  // // Add technology
+  // const handleAddToStack = (technology: Itechnology) => {
+  //   setStack((prev) => [...prev, technology]);
+  // };
+
+  // // Remove single technology
+  // const handleRemoveFromStack = (id: string) => {
+  //   setStack((prev) => prev.filter((tech) => tech.id !== id));
+  // };
+
+  // // Remove all
+  // const handleRemoveAll = () => {
+  //   setStack([]);
+  // };
+
   return (
     <>
       <Nav />
       <Banner />
       <Suspense fallback={<h2>Loading....</h2>}>
-        <Technology technologyPromise={technologyPromise} />
+        <Technology
+          technologyPromise={technologyPromise}
+          // stack={stack}
+          // onAddToStack={handleAddToStack}
+          // onRemoveFromStack={handleRemoveFromStack}
+          // onRemoveAll={handleRemoveAll}
+        />
       </Suspense>
     </>
   );

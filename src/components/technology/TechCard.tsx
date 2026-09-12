@@ -1,9 +1,13 @@
 import type { Itechnology } from "../../types/technologyType";
 import { FaStar } from "react-icons/fa";
+// interface TechCardProps {
+//   tech: Itechnology;
+//   onAddToStack: (technology: Itechnology) => void;
+// }
 
-const TechCard = ({ tech }: { tech: Itechnology }) => {
+const TechCard = ({ tech }) => {
   return (
-    <div className="container max-auto rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.04)]">
+    <div className="container max-auto mb-16 rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.04)]">
       <div className="flex items-center justify-between">
         <img src={tech.icon} alt={tech.name} className="h-12 w-12" />
 
@@ -34,8 +38,10 @@ const TechCard = ({ tech }: { tech: Itechnology }) => {
           <span>{tech.rating}</span>
         </div>
       </div>
-
-      <button className="mt-7 w-full rounded-xl bg-slate-950 py-4 text-lg font-medium text-white transition hover:bg-slate-800">
+ 
+      <button 
+      // onClick={() => onAddToStack(tech)}
+      className="mt-7 w-full rounded-xl bg-slate-950 py-4 text-lg font-medium text-white transition hover:bg-slate-800">
         Add to Stack
       </button>
     </div>
