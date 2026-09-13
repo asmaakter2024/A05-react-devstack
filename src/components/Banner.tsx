@@ -23,7 +23,7 @@ const Banner = () => {
             <button className=" btn rounded-lg bg-gradient-to-r from-[#F97316] to-[#EC4899]">
               Explore Technologies
             </button>
-            <button className="btn btn-active rounded-lg">Default</button>
+            <button className="btn btn-active rounded-lg">Learn More</button>
           </div>
         </div>
 

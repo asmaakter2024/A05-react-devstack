@@ -11,7 +11,7 @@ const TechCard = ({ tech, addToStack, isSelected }: TechCardProps) => {
   return (
     <div
       className={`mb-16 rounded-[28px] border bg-white p-6 shadow-[0_4px_20px_rgba(15,23,42,0.04)] transition-all ${
-        isSelected ? "border-2 border-green-500 shadow-lg" : "border-slate-200"
+        isSelected ? "border-2 border-pink-500 shadow-lg" : "border-slate-200"
       }`}
     >
       {/* Icon & Badge */}
@@ -54,11 +54,11 @@ const TechCard = ({ tech, addToStack, isSelected }: TechCardProps) => {
         disabled={isSelected}
         className={`mt-7 w-full rounded-xl py-4 text-lg font-medium text-white transition ${
           isSelected
-            ? "cursor-not-allowed bg-green-500"
+            ? "cursor-not-allowed bg-gradient-to-r from-[#da752d] to-[#EC4899]"
             : "bg-slate-950 hover:bg-slate-800"
         }`}
       >
-        {isSelected ? "Added to Stack ✓" : "Add to Stack"}
+        {isSelected ? "✓ Added to Stack " : "Add to Stack"}
       </button>
     </div>
   );

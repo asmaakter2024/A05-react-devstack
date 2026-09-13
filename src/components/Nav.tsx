@@ -23,7 +23,7 @@ const Nav = () => {
 
           {/* Desktop Menu */}
           <ul className="hidden md:flex gap-7.25 items-center">
-            <li>Home</li>
+            <li className="text-pink-600">Home</li>
             <li>Technologies</li>
             <li>Projects</li>
             <li>About</li>
