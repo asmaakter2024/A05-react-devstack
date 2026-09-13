@@ -11,6 +11,7 @@ const technologyFetch = async (): Promise<Itechnology[]> => {
   return data;
 };
 
+
 function App() {
   const technologyPromise = technologyFetch();
 
