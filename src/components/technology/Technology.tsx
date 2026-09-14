@@ -37,7 +37,6 @@ const Technology = ({ technologyPromise }: TechnologyProps) => {
 
     setSelectedTechnologies(updatedStack);
 
-
     if (selectedTechnologies.length === 1) {
       toast.info("Stack is removed");
     }
@@ -67,7 +66,7 @@ const Technology = ({ technologyPromise }: TechnologyProps) => {
       <div className="container mx-auto">
         <h2 className="text-4xl font-bold">
           Explore the
-          <span className="bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] bg-clip-text text-4xl font-bold text-transparent">
+          <span className="bg-linear-to-r from-[#EC4899] to-[#8B5CF6] bg-clip-text text-4xl font-bold text-transparent">
             Technologies
           </span>
         </h2>

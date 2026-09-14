@@ -23,18 +23,46 @@ const Nav = () => {
 
           {/* Desktop Menu */}
           <ul className="hidden md:flex gap-7.25 items-center">
-            <li className="text-pink-600">Home</li>
-            <li>Technologies</li>
-            <li>Projects</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li className="text-[14px] text-pink-600">Home</li>
+            <li>
+              <a
+                href="#"
+                className="text-[14px]  transition hover:text-pink-500"
+              >
+                Technologies
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="text-[14px] transition hover:text-pink-500"
+              >
+                Projects
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="text-[14px] transition hover:text-pink-500"
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                className="text-[14px] transition hover:text-pink-500"
+              >
+                Contact
+              </a>
+            </li>
           </ul>
 
           {/* Buttons */}
           <div className="flex items-center gap-3 md:gap-5">
             <button className="font-semibold text-gray-700">Sign In</button>
 
-            <button className="btn btn-secondary rounded-full px-5">
+            <button className="btn btn-secondary rounded-full px-5 hover:bg-linear-to-r from-[#F97316] to-[#EC4899]">
               Sign Up
             </button>
           </div>
